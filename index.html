@@ -2,18 +2,122 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>New York Times Search</title>
-  <!-- Bootswatch Styling for Improving the Aesthetics -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-
-  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-  <!-- Style to fix the issue of text extending past panel length -->
-  <style>
-    .panel-body a {
-      word-break: break-all;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <!-- TAB TITLE -->
+    <title>New York Times Search</title>
+    <!-- BOOTSTRAP TAG -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <!-- FONT AWESOME TAG  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- CSS TAG -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
 </head>
+
+
+<body>
+
+    <!-- BOOTSTRAP SEARCH -->
+    <div class="container">
+
+        <!-- TITLE JUMBOTRON -->
+        <div class="jumbotron">
+            <h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
+        </div>
+
+        <!-- NYT SEARCH ROW -->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <!-- SEARCH PARAMETERS PANEL -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                            <!-- -->
+                        <h3 class="panel-title"><strong><i class="fa fa-list-alt"></i> Search Parameters</strong></h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <!-- HTML FOR INPUTS-->
+                        <form role="form">
+
+                            <!-- SEARCH TEXT BOX-->
+                            <div class="form-group">
+                                <label for="search">Search Term:</label>
+                                <input type="text" class="form-control" id="search-term">
+                            </div>
+
+                            <!-- NUMBER OF RECORDS USER REQUESTS -->
+                            <div class="form-group">
+                                <label for="pwd">Number of Records to Retrieve:</label>
+                                <select class="form-control" id="num-records-select">
+                                    <option value="1">1</option>
+                                    <!-- DEAFULT OPTION (5) -->
+                                    <option value="5" selected>5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+
+                            <!-- PARAMETER: START YEAR-->
+                            <div class="form-group">
+                                <label for="start-year">Start Year (Optional):</label>
+                                <input type="text" class="form-control" id="start-year">
+                            </div>
+
+                            <!-- PARAMETER: END YEAR-->
+                            <div class="form-group">
+                                <label for="end-year">End Year (Optional):</label>
+                                <input type="text" class="form-control" id="end-year">
+                            </div>
+
+                            <!-- SUBMIT BUTTON -->
+                            <button type="submit" class="btn btn-default" id="run-search"><i class="fa fa-search"></i> Search</button>
+                            <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i> Clear
+                                Results</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RETRIEVED ARTICLES -->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+
+                <!-- PANEL FOR EACH ARTICLE RETREIVED -->
+                <div class="panel panel-primary">
+
+                    <!-- PANEL HEADING FOR RETREIVED ARTICLES -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong><i class="fa fa-table"></i> Top Articles</strong></h3>
+                    </div>
+
+                    <!-- RESULTING ARTICLES  -->
+                    <div class="panel-body" id="well-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- MADE BY/WITH  -->
+                <hr>
+                <h5 class="text-center"><small>THIS IS MADE WITH HATE AND RAGE <i class="fa fa-heart"></i></small></h5>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Code to the JavaScript File -->
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>

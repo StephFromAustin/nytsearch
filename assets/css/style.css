@@ -1,0 +1,12 @@
+.container {
+    background-color: white;
+}
+
+.jumbotron {
+    background-color: #20315A;
+    color: white;
+}
+
+.panel panel-primary {
+    background-color: lightslategrey;
+}
